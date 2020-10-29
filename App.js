@@ -1,37 +1,17 @@
 import React from 'react';
-import {SafeAreaView, ScrollView, StyleSheet, StatusBar, useColorScheme} from 'react-native';
-import {LightTheme, DarkTheme} from './src/themes';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import StatusBar from '@components/StatusBar';
+import View from '@components/View';
+import Text from '@components/Text';
 
-const App: () => React$Node = () => {
-  const scheme = useColorScheme();
-
+const App = () => {
   return (
     <>
-      <StatusBar
-        barStyle={
-          scheme === 'dark'
-            ? DarkTheme.statusBar.content
-            : LightTheme.statusBar.content
-        }
-        backgroundColor={
-          scheme === 'dark'
-            ? DarkTheme.statusBar.backgroundColor
-            : LightTheme.statusBar.backgroundColor
-        }
-      />
+      <StatusBar />
       <SafeAreaView>
-        <ScrollView
-          style={[
-            styles.main,
-            {
-              backgroundColor:
-                scheme === 'dark'
-                  ? DarkTheme.statusBar.backgroundColor
-                  : LightTheme.statusBar.backgroundColor,
-            },
-          ]}
-          contentInsetAdjustmentBehavior="automatic"
-        />
+        <View style={styles.main}>
+          <Text style={styles.text}>Hello there!</Text>
+        </View>
       </SafeAreaView>
     </>
   );
@@ -39,8 +19,15 @@ const App: () => React$Node = () => {
 
 const styles = StyleSheet.create({
   main: {
-    height: '100%',
     width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text: {
+    fontSize: 48,
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
 
