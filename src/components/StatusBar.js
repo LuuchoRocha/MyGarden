@@ -6,7 +6,7 @@ const StatusBar = ({theme}) => {
   return (
     <RNStatusBar
       barStyle={theme.statusBarStyle}
-      backgroundColor={theme.colors.background}
+      backgroundColor={theme.colors.statusBar}
     />
   );
 };

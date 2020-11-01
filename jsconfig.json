@@ -9,6 +9,9 @@
             "@themes/*": [
                 "./src/themes/*"
             ],
+            "@screens/*": [
+                "./src/screens/*"
+            ],
         }
     }
 }

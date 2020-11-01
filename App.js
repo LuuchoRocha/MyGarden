@@ -1,34 +1,23 @@
+import 'react-native-gesture-handler';
 import React from 'react';
-import {SafeAreaView, StyleSheet} from 'react-native';
-import StatusBar from '@components/StatusBar';
-import View from '@components/View';
-import Text from '@components/Text';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
+import HomeScreen from '@screens/HomeScreen';
+import ScreenOptions from '@components/ScreenOptions';
+
+const Root = createStackNavigator();
 
 const App = () => {
   return (
-    <>
-      <StatusBar />
-      <SafeAreaView>
-        <View style={styles.main}>
-          <Text style={styles.text}>Hello there!</Text>
-        </View>
-      </SafeAreaView>
-    </>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Root.Navigator screenOptions={ScreenOptions()}>
+          <Root.Screen name="Home" component={HomeScreen} />
+        </Root.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  main: {
-    width: '100%',
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  text: {
-    fontSize: 48,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-});
 
 export default App;
