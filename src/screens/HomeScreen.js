@@ -4,6 +4,7 @@ import SafeAreaView from 'react-native-safe-area-view';
 import StatusBar from '@components/StatusBar';
 import View from '@components/View';
 import Text from '@components/Text';
+import ActivityIndicator from '@components/ActivityIndicator';
 
 const HomeScreen = (props) => {
   return (
@@ -11,6 +12,7 @@ const HomeScreen = (props) => {
       <StatusBar />
       <View style={styles.main}>
         <Text style={styles.text}>Hello there!</Text>
+        <ActivityIndicator size={128} />
       </View>
     </SafeAreaView>
   );
@@ -27,6 +29,7 @@ const styles = StyleSheet.create({
     fontSize: 48,
     fontWeight: 'bold',
     textAlign: 'center',
+    padding: 32,
   },
 });
 
