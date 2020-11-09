@@ -8,7 +8,7 @@ const ScreenOptions = (options = {title: 'My Garden'}) => {
 
   return {
     headerTitleStyle: {fontWeight: 'bold'},
-    headerTintColor: theme.colors.text,
+    headerTintColor: theme.colors.headerText,
     headerStyle: {
       backgroundColor: theme.colors.header,
     },
@@ -16,4 +16,21 @@ const ScreenOptions = (options = {title: 'My Garden'}) => {
   };
 };
 
-export default ScreenOptions;
+const BottomTabsOptions = () => {
+  const scheme = useColorScheme();
+  const theme = scheme === 'dark' ? DarkTheme : LightTheme;
+
+  return {
+    activeTintColor: theme.colors.text,
+    inactiveTintColor: theme.colors.text,
+    activeBackgroundColor: theme.colors.header,
+    inactiveBackgroundColor: theme.colors.header,
+    showLabel: false,
+    style: {
+      borderTopWidth: 0,
+      elevation: 8,
+    },
+  };
+};
+
+export {ScreenOptions, BottomTabsOptions};

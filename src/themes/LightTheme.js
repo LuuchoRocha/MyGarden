@@ -1,9 +1,11 @@
 export default {
-  statusBarStyle: 'dark-content',
+  statusBarStyle: 'light-content',
   colors: {
-    statusBar: 'rgb(200, 220, 180)',
-    header: 'rgb(200, 220, 180)',
-    background: 'rgb(180, 200, 160)',
-    text: 'rgb(30, 50, 20)',
+    statusBar: 'rgb(60, 50, 20)',
+    header: 'rgb(60, 50, 20)',
+    background: 'rgb(245, 220, 200)',
+    text: 'rgb(60, 50, 20)',
+    border: 'rgb(60, 50, 20)',
+    headerText: 'rgb(245, 220, 200)',
   },
 };
